@@ -1,0 +1,7 @@
+[mysqld]
+# Data in a subfolder of the Railway volume, so the volume's lost+found
+# never shows up as a database.
+datadir = /var/lib/mysql/data
+innodb_use_native_aio = 0
+performance_schema = OFF
+disable_log_bin
