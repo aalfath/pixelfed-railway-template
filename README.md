@@ -8,11 +8,11 @@ A Railway template for [Pixelfed](https://pixelfed.org), the federated, ad-free 
 |---|---|---|---|
 | `Pixelfed` (web, queue worker, scheduler) | `pixelfed/` | `ghcr.io/pixelfed/pixelfed:v0.15.2` | `/var/www/html/storage` (uploads, OAuth keys, logs) |
 | `MySQL` | `mysql/` | `mysql:8.4.13` (LTS) | `/var/lib/mysql` |
-| `Redis` (cache and queues) | `redis/` | `redis:8.10.3-alpine` | `/data` (append-only file) |
+| `Redis` (cache and queues) | `redis/` | `redis:8.10.3-alpine` | `/data` (append-only file in `/data/redis`) |
 
 ## What you get
 
-- Pixelfed v0.15.2 on a Railway domain with HTTPS, health check `/api/service/health-check`.
+- Pixelfed v0.15.2 on a Railway domain with HTTPS, Railway health check on `/api/v1/instance` (public).
 - Database migrations run on every start, so updates apply themselves.
 - An admin account created on the first start from `ADMIN_EMAIL` (you enter it) and `ADMIN_PASSWORD` (generated). Log in with the email and password.
 - OAuth keys, the instance actor (federation signing key) and the city list for post locations are set up on the first start.
